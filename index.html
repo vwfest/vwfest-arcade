@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://vwfestmemecoin.com; connect-src 'self' https://race.vwfestmemecoin.com; frame-src https://vwfest.github.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>$VWFEST Arcade Room — free games for holders &amp; enthusiasts</title>
+<meta name="description" content="The $VWFEST Arcade Room: free 3D browser games for holders and enthusiasts alike. Roadtrip Race, DUST &amp; DEAD zombie survival and Drag Strip, built for fun and community gatherings.">
+<link rel="icon" href="https://vwfestmemecoin.com/gallery/favicons/favicon.png">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="https://vwfestmemecoin.com" rel="noopener">$VWFEST · pure enthusiast energy</a>
+  <nav>
+    <a href="https://vwfestmemecoin.com" rel="noopener">Home</a>
+    <a href="https://vwfestmemecoin.com/#about" rel="noopener">About</a>
+    <a href="https://vwfestmemecoin.com/#events" rel="noopener">Events</a>
+    <a class="on" href="./">Arcade Room</a>
+    <a href="#games">Games</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="kicker">FREE · NO WALLET · NO LOGIN · JUST FUN</p>
+    <h1>ARCADE <span>ROOM</span></h1>
+    <p class="tag">Free 3D games for <b>$VWFEST</b> holders and enthusiasts alike. Built for fun and for community gatherings: pull it up on a big screen at the meetup, pass the phone around, and settle it on the leaderboard.</p>
+    <p class="cta"><a class="btn" href="#games">Pick a game ↓</a> <a class="btn ghost" href="https://vwfestmemecoin.com" rel="noopener">← Back to vwfestmemecoin.com</a></p>
+  </section>
+
+  <section id="games" class="grid" aria-label="Games">
+    <article class="card" id="g-race">
+      <img src="img/race.jpg" width="960" height="600" alt="VW Fest Race: a red Karmann Ghia racing a Bus around a 3D circuit" loading="lazy">
+      <div class="body">
+        <div class="tags"><span>3D racing</span><span>4 VWs</span><span>Phone + desktop</span></div>
+        <h2>VW Fest Race</h2>
+        <p>Pick a Beetle, Bus, Karmann Ghia or Thing and race the 209 loop against four rivals. Real gears, drifting and a global leaderboard.</p>
+        <div class="actions"><a class="btn" href="https://race.vwfestmemecoin.com" target="_blank" rel="noopener">Play ↗</a></div>
+        <p class="note">Opens on its own page (it can't be shown inside this page).</p>
+        <h3>🏆 Top times</h3><ol class="top" data-board="race"><li class="muted">Loading…</li></ol>
+      </div>
+    </article>
+
+    <article class="card" id="g-zombies">
+      <img src="img/zombies.jpg" width="960" height="600" alt="DUST and DEAD: first-person zombie shooter in a VW junkyard at night" loading="lazy">
+      <div class="body">
+        <div class="tags"><span>3D shooter</span><span>Waves</span><span>Phone + desktop</span></div>
+        <h2>DUST &amp; DEAD</h2>
+        <p>Hold the air-cooled junkyard against ever-growing zombie hordes. Board up windows, buy guns, grab power-ups, survive another round.</p>
+        <div class="actions"><button class="btn playhere" type="button" data-game="zombies">▶ Play here</button><a class="btn ghost" href="https://vwfest.github.io/vwfest-zombies/" target="_blank" rel="noopener">Open full page ↗</a></div>
+        <h3>🏆 Top survivors</h3><ol class="top" data-board="zombies"><li class="muted">Loading…</li></ol>
+      </div>
+    </article>
+
+    <article class="card" id="g-drag">
+      <img src="img/drag.jpg" width="960" height="600" alt="Drag Strip: christmas tree lit up, a red Karmann Ghia launching next to a purple Thing" loading="lazy">
+      <div class="body">
+        <div class="tags"><span>3D drag racing</span><span>Manual shifting</span><span>Phone + desktop</span></div>
+        <h2>Drag Strip</h2>
+        <p>Quarter-mile showdown: nail the launch on the green, hit your shifts and chase a personal best ET. Reaction time, 60 ft, trap speed and a rival in the other lane.</p>
+        <div class="actions"><button class="btn playhere" type="button" data-game="drag">▶ Play here</button><a class="btn ghost" href="https://vwfest.github.io/vwfest-drag/" target="_blank" rel="noopener">Open full page ↗</a></div>
+        <h3>🏆 Quickest quarter miles</h3><ol class="top" data-board="drag"><li class="muted">Loading…</li></ol>
+      </div>
+    </article>
+  </section>
+
+  <section id="player" class="player hidden" aria-label="Game player">
+    <div class="bar"><b id="playerTitle">Game</b>
+      <span><button class="btn small" id="bFull" type="button">⛶ Fullscreen</button> <a class="btn small ghost" id="bNew" href="#" target="_blank" rel="noopener">New tab ↗</a> <button class="btn small ghost" id="bClose" type="button">✕ Close</button></span></div>
+    <div class="frame" id="frame"></div>
+    <p class="note">Click inside the game once to give it your keyboard. On a phone, use <b>Open full page</b> and rotate to landscape for the best view.</p>
+  </section>
+
+  <section class="about">
+    <h2>Why an Arcade Room?</h2>
+    <p>$VWFEST is a community of air-cooled VW people first. These games are here for the fun of it: something to play while the grill heats up, something to put on the screen at a meetup, and a friendly leaderboard to talk trash on. Leaderboards take a <b>nickname only</b>. No account, no wallet connection, and no prizes. Just bragging rights.</p>
+    <p class="links"><a href="https://vwfestmemecoin.com" rel="noopener">vwfestmemecoin.com</a> · <a href="https://x.com/VWFESTLIVE" rel="noopener noreferrer">@VWFESTLIVE on X ↗</a></p>
+  </section>
+</main>
+
+<footer>
+  <p><a href="https://vwfestmemecoin.com" rel="noopener">← Back to $VWFEST</a></p>
+  <p class="fine">Just for fun. No wallet, no login, no prizes. $VWFEST is a community-driven meme coin. Not financial advice. Just vibes, views, and a full tank.</p>
+</footer>
+<script src="arcade.js?v=1"></script>
+</body>
+</html>
