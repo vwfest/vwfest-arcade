@@ -15,13 +15,14 @@ const args = ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swif
     const p = await ctx.newPage(); const errs = []; p.on('console', m => { if (m.type() === 'error') errs.push(m.text()); }); p.on('pageerror', e => errs.push('PAGEERROR ' + e.message));
     const resp = await p.goto(BASE); ok(resp.status() === 200, 'page 200'); await p.waitForTimeout(800);
     ok(await p.evaluate(() => /ARCADE/.test(document.querySelector('h1').textContent)), 'hero title');
-    ok(await p.evaluate(() => document.querySelectorAll('.card').length === 5), 'five game cards');
+    ok(await p.evaluate(() => document.querySelectorAll('.card').length === 6), 'six game cards');
     ok(await p.evaluate(() => [...document.querySelectorAll('.card img')].every(i => i.complete && i.naturalWidth > 0)), 'every card has a loaded screenshot');
     const hrefs = await p.evaluate(() => [...document.querySelectorAll('.card a.btn')].map(a => a.href));
     ok(hrefs.includes('https://race.vwfestmemecoin.com/') && hrefs.includes('https://vwfest.github.io/vwfest-zombies/') && hrefs.includes('https://vwfest.github.io/vwfest-drag/') && hrefs.includes('https://guess-the-chart.onrender.com/') && hrefs.includes('https://vwfest.github.io/vwfest-holdem/'), 'Play links point at race / zombies / drag / guess-the-chart / holdem');
     ok(await p.evaluate(() => [...document.querySelectorAll('a[target=_blank]')].every(a => /noopener/.test(a.rel))), 'all new-tab links have rel=noopener');
     ok(await p.evaluate(() => [...document.querySelectorAll('a')].some(a => a.href === 'https://vwfestmemecoin.com/' && /Back/.test(a.textContent))), 'link back to vwfestmemecoin.com');
     ok(await p.evaluate(() => document.querySelectorAll('#g-chart .playhere').length === 0 && document.querySelector('#g-chart a.btn').target === '_blank'), 'GUESS THE CHART card is link-only, opens new tab');
+    ok(await p.evaluate(() => document.querySelectorAll('#g-battledubs .playhere').length === 0 && document.querySelector('#g-battledubs a.btn').href === 'https://vwfest.github.io/vwfest-battledubs/' && document.querySelector('#g-battledubs a.btn').target === '_blank'), 'BATTLE DUBS card is link-only, opens new tab');
     ok(await p.evaluate(() => document.querySelectorAll('#g-race .playhere').length === 0), 'race card is link-only (framing blocked by the race server)');
     if (!LIVE_API) { ok(await p.evaluate(() => document.querySelector('[data-board=drag] li b').textContent === 'DuneDan' && document.querySelectorAll('[data-board] b b').length === 0 && document.querySelectorAll('[data-board=drag] li').length === 2), 'top-3 boards render; nicknames are text, not HTML'); }
     ok(await p.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'no horizontal overflow');
