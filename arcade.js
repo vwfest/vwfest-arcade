@@ -1,5 +1,7 @@
 // Arcade Room: play-in-page panel (iframes, lazy) + top-3 boards. All server text is written with textContent (no innerHTML).
 (() => {
+  // The free Render game servers sleep when idle (~20 s cold start). Pinging their health endpoints while the visitor browses the Arcade wakes them before they click Play.
+  ['https://guess-the-chart.onrender.com', 'https://vwfest-holdem.onrender.com', 'https://vwfest-battledubs.onrender.com'].forEach((u) => { try { fetch(u + '/healthz', { mode: 'no-cors', cache: 'no-store', credentials: 'omit', referrerPolicy: 'no-referrer' }).catch(() => {}); } catch (e) {} });
   const API = 'https://race.vwfestmemecoin.com/api';
   const GAMES = {
     zombies: { title: 'DUST & DEAD', src: 'https://vwfest.github.io/vwfest-zombies/' },
